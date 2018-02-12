@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taller ED 2</title>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/knockout-3.4.2.js"></script>
+    <script src="frontend.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>if (window.module) module = window.module;</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="col-sm-2">
+                <!-- insertar un cuadro de texto -->
+                <label for="codigoProducto">Codigo:</label>
+                <input id="codigoProducto" data-bind="value: codigo" type="text" class="form-control" name="codigoProducto">
+            </div>
+            <div class="col-sm-4">
+                <!-- insertar un cuadro de texto -->
+                <label for="nombredelacaja">Nombre del Producto:</label>
+                <input id="txtProducto" data-bind="value: producto" type="text" class="form-control" name="nombredelacaja">
+            </div>
+            <div class="col-sm-2">
+                <!-- insertar un boton -->
+                <button id="btnInsertar" data-bind="click: add" type="button" class="btn btn-primary">Insertar</button>
+            </div>
+        </div>
+        <!-- la etiqueta table para crear la tabla -->
+        <table class="table-condensed">
+            <!-- la etiqueta thead para definir la primera columna de encabeados -->
+            <thead>
+                <tr>
+                    <th>
+                        Codigo
+                    </th>
+                    <th>
+                        Producto
+                    </th> 
+                </tr>
+            </thead>
+           <!-- la etiqueta tbody indica que son la celdas de la tabla, la tabla -->
+            <tbody data-bind="foreach: registros">
+                <tr>
+                    <td data-bind="text: codigo"></td>
+                    <td data-bind="text: producto"></td>
+                </tr>
+            </tbody>
+        <table>
+    <div>
+</body>
+</html>
