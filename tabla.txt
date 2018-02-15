@@ -1,6 +1,4 @@
-1, Televisor,
-2, Computador,
-3, Libro,x
-4, Radio, x5,Nevera5,Nevera,5,Nevera
-5,Nevera
-6,Microondas
+1,TV,false
+2,Radio,false
+3,Nevera,true
+4,DVD,false

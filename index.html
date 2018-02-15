@@ -13,16 +13,15 @@
     <script src="frontend.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>if (window.module) module = window.module;</script>
-    
 </head>
 <body>
-    <div class="panel panel-primary">
+        <div class="panel panel-primary">
         <div class="panel-heading">
-            Tabla
+            Productos
         </div>
         <div class="panel-body">
             <div class="row">
-                    <button data-bind="click: leerArchivo" type="button" class="btn btn-success">Leer archivo</button>
+                    <button data-bind="click: leerArchivo" type="button" class="btn btn-primary">Leer archivo</button>
             </div>
             <div class="row">
                 <div class="col-sm-2">
@@ -37,10 +36,13 @@
                 </div>
                 <div class="col-sm-2">
                     <!-- insertar un boton -->
-                    <button id="btnInsertar" data-bind="click: add" type="button" class="btn btn-primary">Insertar</button>
+                    <button id="btnInsertar" data-bind="click: insertar" type="button" class="btn btn-success">Insertar</button>
+                </div>
+                <div class="col-sm-2">    
+                    <button id="btnBorrar" data-bind="click: borrar" type="button" class="btn btn-danger">Borrar</button>
                 </div>
             </div>
-            <!-- la etiqueta table para crear la tabla -->
+        <!-- la etiqueta table para crear la tabla -->
             <table class="table-condensed">
                 <!-- la etiqueta thead para definir la primera columna de encabeados -->
                 <thead>
@@ -50,12 +52,12 @@
                         </th>
                         <th>
                             Producto
-                        </th> 
+                        </th>
                     </tr>
                 </thead>
                 <!-- la etiqueta tbody indica que son la celdas de la tabla, la tabla -->
                 <tbody data-bind="foreach: productos">
-                    <tr>
+                    <tr data-bind="visible: $data.toBool()">
                         <td data-bind="text: codigo"></td>
                         <td data-bind="text: nombre"></td>
                     </tr>
